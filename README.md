@@ -24,7 +24,7 @@ house_price_prediction/
 
 │── templates/
 
-│   ├── index.html     # Webpage UI
+  │   ├── index.html     # Webpage UI
 
 │── static/            # (Optional) CSS/JS files for styling
 
