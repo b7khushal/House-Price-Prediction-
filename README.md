@@ -18,15 +18,25 @@ The model is trained using Random Forest Regressor and serves predictions via a 
 
 house_price_prediction/
 │── model.py           # Train the machine learning model
+
 │── app.py             # Flask backend to serve predictions
+
 │── templates/
+
 │   ├── index.html     # Webpage UI
+
 │── static/            # (Optional) CSS/JS files for styling
+
 │── model.pkl          # Saved trained model
+
 │── encoder.pkl        # Saved OneHotEncoder for categorical variables
+
 │── scaler.pkl         # Saved StandardScaler for numerical data
+
 │── chennai_data.csv   # House price dataset
+
 │── requirements.txt   # List of Python dependencies
+
 │── README.md          # Project documentation
 
 ---
@@ -53,4 +63,4 @@ scaler.pkl (For feature scaling)
 4️⃣ Run the Flask Application
 python app.py
 Open http://127.0.0.1:5000/ in your browser.
-Enter details in the form to predict the house pric
+Enter details in the form to predict the house price
