@@ -17,6 +17,7 @@ The model is trained using Random Forest Regressor and serves predictions via a 
 📁 Project Structure
 
 house_price_prediction/
+
 │── model.py           # Train the machine learning model
 
 │── app.py             # Flask backend to serve predictions
