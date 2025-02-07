@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOUSE PRICE PREDICTION</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .prediction-result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            color: #2c3e50;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>House Price Prediction</h2>
+        <form action="/predict" method="post">
+            <input type="text" name="INT_SQFT" placeholder="Interior Sqft" required>
+            <input type="text" name="DIST_MAINROAD" placeholder="Distance from Main Road" required>
+            <input type="text" name="N_BEDROOM" placeholder="Number of Bedrooms" required>
+            <input type="text" name="N_BATHROOM" placeholder="Number of Bathrooms" required>
+            <input type="text" name="N_ROOM" placeholder="Total Rooms" required>
+            
+            <select name="AREA" required>
+                <option value="" disabled selected>Select Area</option>
+                <option value="Karapakkam">Karapakkam</option>
+                <option value="Anna Nagar">Anna Nagar</option>
+                <option value="Adyar">Adyar</option>
+            </select>
+            
+            <select name="SALE_COND" required>
+                <option value="" disabled selected>Select Sale Condition</option>
+                <option value="AbNormal">AbNormal</option>
+                <option value="Family">Family</option>
+            </select>
+
+            <select name="PARK_FACIL" required>
+                <option value="" disabled selected>Parking Facility</option>
+                <option value="Parking Available">Yes</option>
+                <option value="Parking Not Available">No</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+            <div class="prediction-result">
+                {{ prediction_text }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
